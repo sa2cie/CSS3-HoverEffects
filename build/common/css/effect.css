@@ -1,0 +1,326 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+/* ==========================================================================
+  BASE
+========================================================================== */
+body {
+  font-family: 'Noto Sans Japanese', "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  color: #cccccc;
+  background-color: #212121;
+}
+body.white-theme {
+  color: #212121;
+  background-color: #fefefe;
+}
+.box {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto 5%;
+}
+.box .box__heading {
+  text-align: center;
+  margin: 2em 0;
+  line-height: 1;
+}
+.box .box__body {
+  width: 100%;
+  overflow: hidden;
+}
+.box img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.media {
+  position: relative;
+  height: auto;
+  margin: 0 15px;
+  float: left;
+  width: calc((100% - 90px) / 3);
+  width: -moz-calc((100% - 90px) / 3);
+}
+.media .media__link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+.media:before {
+  z-index: 10;
+}
+.media:after {
+  z-index: 10;
+}
+.media .media__image {
+  z-index: 0;
+}
+.media .media__caption {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  opacity: 0;
+  z-index: 20;
+}
+.media .caption__wrapper {
+  margin: 0 auto;
+  display: table;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+.media .caption__inner {
+  margin: 0 auto;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.media .caption__heading,
+.media .caption__sub {
+  width: 95%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  opacity: 0;
+  transition: all 0.25s ease;
+  z-index: 30;
+}
+.media .caption__heading {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1;
+}
+.media .caption__sub {
+  font-size: 0.8rem;
+  color: #cccccc;
+  line-height: 1;
+  /* -webkit-transition-delay: 0.25s;
+		transition-delay: 0.25s; */
+}
+@media (max-width: 640px) {
+  .media {
+    width: 90%;
+    float: none;
+    margin: 0 auto 5%;
+  }
+}
+.overlay {
+  background: #ffffff;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+/* ==========================================================================
+Hover Effects 01
+========================================================================== */
+.effect01 .caption__heading:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  margin: 0 auto;
+  background-color: #94E864;
+  margin-top: 1em;
+  transition: all 0.2s ease;
+  transition-delay: 0.4s;
+}
+.effect01 .media:before {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 100%;
+  content: '';
+  background-color: rgba(10, 10, 10, 0.8);
+  transition: all 0.25s ease;
+  transition-delay: 0.25s;
+}
+.effect01 .media .media__image {
+  transition: all 0.25s ease;
+}
+.effect01 .media .media__caption {
+  transition: all 0.25s ease;
+  transition-delay: 0.25s;
+}
+.effect01 .media:hover:before {
+  bottom: 10px;
+  transition-delay: 0s;
+}
+.effect01 .media:hover .media__caption {
+  top: 0;
+  opacity: 1;
+}
+.effect01 .media:hover .caption__heading,
+.effect01 .media:hover .caption__sub {
+  opacity: 1;
+  top: 0;
+  bottom: 0;
+}
+.effect01 .media:hover .caption__heading {
+  margin-bottom: 0.8rem;
+}
+.effect01 .media:hover .caption__heading:after {
+  width: 12%;
+  background: linear-gradient(to bottom, #a2d93f 0%, #a1d54f 50%, #80c218 50%, #aef333 100%);
+}
+/* ==========================================================================
+Hover Effects 02
+========================================================================== */
+.effect02 .caption__heading:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  margin: 0 auto;
+  background-color: #94E864;
+  margin-top: 1em;
+  transition: all 0.2s ease;
+  transition-delay: 0.3s;
+}
+.effect02 .media {
+  background-color: #333333;
+  overflow: hidden;
+}
+.effect02 .media:before {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 100%;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.25s ease;
+  transition-delay: 0.25s;
+  z-index: 3;
+}
+.effect02 .media:after {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+  transition-delay: 0.2s;
+  z-index: 2;
+}
+.effect02 .media .media__image {
+  opacity: 1;
+  transition: all 0.25s ease;
+  transition-delay: 0.25s;
+}
+.effect02 .media .media__caption {
+  transition: all 0.15s ease;
+  transition-delay: 0.2s;
+}
+.effect02 .media:hover:before {
+  bottom: 10px;
+  transition-delay: 0s;
+}
+.effect02 .media:hover:after {
+  opacity: 1;
+  transition-delay: 0s;
+}
+.effect02 .media:hover .media__image {
+  -webkit-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+          transform: scale(1.3);
+  transition-delay: 0s;
+}
+.effect02 .media:hover .media__caption {
+  top: 0;
+  opacity: 1;
+}
+.effect02 .media:hover .caption__heading,
+.effect02 .media:hover .caption__sub {
+  opacity: 1;
+  top: 0;
+  bottom: 0;
+}
+.effect02 .media:hover .caption__heading {
+  margin-bottom: 0.8rem;
+}
+.effect02 .media:hover .caption__heading:after {
+  width: 12%;
+  background-color: #c4d962;
+}
+/* ==========================================================================
+Hover Effects 03
+========================================================================== */
+.effect03 .caption__heading:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  margin: 0 auto;
+  background-color: #94E864;
+  margin-top: 1em;
+  transition: all 0.2s ease;
+  transition-delay: 0.3s;
+}
+.effect03 .media {
+  background-color: #333333;
+  overflow: hidden;
+}
+.effect03 .media:after {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+  transition-delay: 0.2s;
+}
+.effect03 .media .media__image {
+  opacity: 1;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+}
+.effect03 .media .media__caption {
+  transition: all 0.15s ease;
+  transition-delay: 0.15s;
+}
+.effect03 .media:hover:after {
+  opacity: 1;
+  transition-delay: 0s;
+}
+.effect03 .media:hover .media__image {
+  -webkit-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+          transform: scale(1.3);
+  transition-delay: 0s;
+}
+.effect03 .media:hover .media__caption {
+  top: 0;
+  opacity: 1;
+}
+.effect03 .media:hover .caption__heading,
+.effect03 .media:hover .caption__sub {
+  opacity: 1;
+  top: 0;
+  bottom: 0;
+}
+.effect03 .media:hover .caption__heading {
+  margin-bottom: 0.8rem;
+}
+.effect03 .media:hover .caption__heading:after {
+  width: 12%;
+  background-color: #c4d962;
+}

@@ -1,0 +1,74 @@
+/* ==========================================================================
+Hover Effects 01
+========================================================================== */
+
+.effect01 {
+	.caption__heading:after {
+		content: '';
+		display: block;
+		width: 0;
+		height: 1px;
+		margin: 0 auto;
+		background-color: #94E864;
+		margin-top: 1em;
+		-webkit-transition: all 0.2s ease;
+		transition: all 0.2s ease;
+		-webkit-transition-delay: 0.4s;
+		transition-delay: 0.4s;
+	}
+	.media {
+		&:before {
+			position: absolute;
+			top: 10px;
+			bottom: 10px;
+			left: 10px;
+			right: 10px;
+			bottom: 100%;
+			content: '';
+			background-color: rgba(10, 10, 10, 0.8);
+			-webkit-transition: all 0.25s ease;
+			transition: all 0.25s ease;
+			-webkit-transition-delay: 0.25s;
+			transition-delay: 0.25s;
+		}
+		.media__image {
+			-webkit-transition: all 0.25s ease;
+			transition: all 0.25s ease;
+		}
+		.media__caption {
+			-webkit-transition: all 0.25s ease;
+			transition: all 0.25s ease;
+			-webkit-transition-delay: 0.25s;
+			transition-delay: 0.25s;
+		}
+		&:hover {
+			&:before {
+				bottom: 10px;
+				-webkit-transition-delay: 0s;
+				transition-delay: 0s;
+			}
+			.media__caption {
+				top: 0;
+				opacity: 1;
+			}
+			.caption__heading,
+			.caption__sub {
+				opacity: 1;
+				top: 0;
+				bottom: 0;
+			}
+			.caption__heading {
+				margin-bottom: 0.8rem;
+				&:after {
+					width: 12%;
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #a2d93f), color-stop(0.50, #a1d54f), color-stop(0.50, #80c218), color-stop(1.00, #aef333));
+					background: -webkit-linear-gradient(top, #a2d93f 0%, #a1d54f 50%, #80c218 50%, #aef333 100%);
+					background: -moz-linear-gradient(top, #a2d93f 0%, #a1d54f 50%, #80c218 50%, #aef333 100%);
+					background: -o-linear-gradient(top, #a2d93f 0%, #a1d54f 50%, #80c218 50%, #aef333 100%);
+					background: -ms-linear-gradient(top, #a2d93f 0%, #a1d54f 50%, #80c218 50%, #aef333 100%);
+					background: linear-gradient(to bottom, #a2d93f 0%, #a1d54f 50%, #80c218 50%, #aef333 100%);
+				}
+			}
+		}
+	}
+}
