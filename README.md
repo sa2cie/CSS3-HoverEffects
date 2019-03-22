@@ -1,10 +1,9 @@
 # CSS3 Hover Effects
 HTML/CSSのみで実装できるホバーエフェクトを作りました。<br>
-パターンは今後追加していく予定です。<br>
 <br>
 
 ## DEMO
-https://vvaka1122.github.io/CSS3-HoverEffects/<br>
+https://sa2cie.github.io/css3-hover-effects/<br>
 <br>
 
 ## ブラウザ確認範囲
